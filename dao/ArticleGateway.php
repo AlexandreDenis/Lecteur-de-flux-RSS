@@ -14,7 +14,6 @@ class ArticleGateway
      */
     public function __construct()
     {
-        $this->con = new Connection();;
     }
 
 }

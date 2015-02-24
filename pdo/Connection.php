@@ -17,11 +17,14 @@ class Connection extends PDO
     public static function getConnection()
     {
         if (is_null(self::$con)) {
-            echo "toto";
-            $dsn = 'mysql:host=localhost;dbname=test';
-            echo "toto";
-            self::$con = new PDO($dsn, 'root', '');
-            echo "toto";
+            $dsn = 'mysql:host=localhost;dbname=adrien_calime_et_alexandre_denis_lecteur_rss';
+            try {
+                self::$con = new PDO($dsn, 'root', '');
+            } catch(PDOException $e) {
+                $fp = fopen('errorConnection.txt','w');
+                fprintf($fp,'connection failed : '.$e->getMessage());
+                fclose($fp);
+            }
         }
         return self::$con;
     }

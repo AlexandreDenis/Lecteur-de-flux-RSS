@@ -17,9 +17,9 @@ $app->post('/testPost', function (Request $request) use ($app) {
 
     $flux = $request->get("inputRss");
 
-    $commandAction->addFlux(flux);
+    $commandAction->addFlux($flux);
 
-    return $app->redirect('/views/index.php');
+    return $app->redirect('/PhpProject/views/index.php');
 });
 
 $app->get('/testGet', function () {
