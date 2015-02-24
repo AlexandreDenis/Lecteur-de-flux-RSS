@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<form action='../controllers/RSSController.php/testPost' name='add' method='post'>
+<form action='../controllers/Controller.php/testPost' name='add' method='post'>
     <input type="text" name="inputRss"/>
     <input type='submit' name='submit' value='Submit'>
 </form>
