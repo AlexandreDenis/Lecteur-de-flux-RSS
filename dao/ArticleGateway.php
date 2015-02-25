@@ -27,4 +27,20 @@ class ArticleGateway
         return $this->con->lastInsertId();
     }
 
+    public function findAll() {
+
+        $arrayArticle = array();
+
+        $stmt = $this->con->prepare('SELECT * from Article ORDER BY date DESC');
+        if ($stmt->execute()) {
+            while ($row = $stmt->fetch()) {
+
+                array_push($arrayArticle,new Article($row['lien'],$row['titre'],$row['description'],$row['date']));
+
+            }
+        }
+
+        return $arrayArticle;
+    }
+
 }

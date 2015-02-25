@@ -43,7 +43,7 @@ class GreetCommand extends Command
                     foreach ($items as $item) {
                         $pubDate = date("Y-m-d H:i", strtotime($item->pubDate));
                         if ($date < $pubDate) {
-                            $article = new Article($item->link, $item->title, $item->description, $pubDate);
+                            $article = new Article($item->link, $item->title, explode(".",$item->description)[0], $pubDate);
                             $article->save($con, $id);
                         }
                     }

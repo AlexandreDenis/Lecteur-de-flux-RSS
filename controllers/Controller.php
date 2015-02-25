@@ -11,7 +11,7 @@ $app = new Silex\Application();
 /**
  * POST method to add a new flux
  */
-$app->post('/testPost', function (Request $request) use ($app) {
+$app->post('/addFeed', function (Request $request) use ($app) {
 
     $commandAction = new CommandAction();
 
@@ -21,11 +21,5 @@ $app->post('/testPost', function (Request $request) use ($app) {
 
     return $app->redirect('/PhpProject/views/flux.php');
 });
-
-$app->get('/testGet', function () {
-    $output = 'hey man';
-    return $output;
-});
-
 
 $app->run();

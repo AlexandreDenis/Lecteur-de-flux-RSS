@@ -1,3 +1,5 @@
+<?php require_once __DIR__ . '/../controllers/ControllerOnLoadPageFlux.php'; ?>
+
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:f="http://java.sun.com/jsf/core"      
@@ -39,13 +41,13 @@
 	<div class="container">
 		<!-- Add a feed -->
 		<h3>Add a feed</h3>
-		<form class="form-inline" action='../controllers/Controller.php/testPost' name='add' method='post'>
+		<form class="form-inline" action='../controllers/Controller.php/addFeed' name='add' method='post'>
 			<div class="add-div">
 			  <input type="text" class="input-small" placeholder="Feed URL" name="inputRss"/>
 			  <button type="submit" class="btn">Add</button>
 			</div>
 		</form>
-		
+
 		<!-- list of feeds registered -->
 		<h3>List of your feeds</h3>
 		<table class="table table-hover">
@@ -56,28 +58,22 @@
                 </tr>
             </thead>
 			<tbody>
-				<!-- one feed -->
-				<tr>
-					<td>
-						<label class="checkbox">
-						  <input type="checkbox"/>
-						</label>
-					</td>
-					<td>
-						<a href="www.lemonde.fr/rss/">www.lemonde.fr/rss/</a>
-					</td>
-				</tr>
-				<!-- one feed -->
-				<tr>
-					<td>
-						<label class="checkbox">
-						  <input type="checkbox"/>
-						</label>
-					</td>
-					<td>
-						<a href="www.bbc.co.uk/news/10628494">www.bbc.co.uk/news/10628494</a>
-					</td>
-				</tr>
+
+				<?php foreach($arrayFlux as &$value) { ?>
+
+					<tr>
+						<td>
+							<label class="checkbox">
+							  <input type="checkbox"/>
+							</label>
+						</td>
+						<td>
+							<a href=<?php echo $value->getUrl() ?>><?php echo $value->getUrl() ?></a>
+						</td>
+					</tr>
+
+				<?php } ?>
+
 			</tbody>
 		</table>
 		
