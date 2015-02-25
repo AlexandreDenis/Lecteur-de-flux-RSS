@@ -13,7 +13,7 @@ class CommandAction
     {
         $con = Connection::getConnection();
 
-        $fluxEntity = new Flux(0,"url","titre",$flux);
+        $fluxEntity = new Flux($flux,date("Y-m-d H:i"));
         $fluxEntity->save($con);
     }
 

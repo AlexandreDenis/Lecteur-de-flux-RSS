@@ -22,7 +22,7 @@ class Connection extends PDO
                 self::$con = new PDO($dsn, 'root', '');
             } catch(PDOException $e) {
                 $fp = fopen('errorConnection.txt','w');
-                fprintf($fp,'connection failed : '.$e->getMessage());
+                fprintf($fp,'la connection a échoué : '.$e->getMessage());
                 fclose($fp);
             }
         }

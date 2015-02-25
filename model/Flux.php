@@ -9,28 +9,22 @@ require_once __DIR__ . '/../dao/FluxGateway.php';
 class Flux
 {
     private $id;
-    private $format;
     private $url;
+    private $date;
+
     private $titre;
     private $description;
 
     private $listArticle;
 
-    public function __construct($format,$url,$titre,$description) {
-        $this->description = $description;
-        $this->format = $format;
+    public function __construct($url,$date) {
         $this->url = $url;
-        $this->titre = $titre;
+        $this->date = $date;
     }
 
     public function save($con) {
         $fluxGateway = new FluxGateway($con);
-        $this->id =  $fluxGateway->saveFlux($this);
-    }
-
-    public function getFormat()
-    {
-        return $this->format;
+        $this->id =  $fluxGateway->insert($this);
     }
 
     public function getUrl()
@@ -38,14 +32,9 @@ class Flux
         return $this->url;
     }
 
-    public function getTitre()
+    public function getDate()
     {
-        return $this->titre;
-    }
-
-    public function getDescription()
-    {
-        return $this->description;
+        return $this->date;
     }
 
 }

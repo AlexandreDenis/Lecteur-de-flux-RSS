@@ -13,12 +13,12 @@ class FluxGateway
         $this->con = $con;
     }
 
-    public function saveFlux(Flux $flux) {
-        $stmt = $this->con->prepare('insert into Flux values (:format) (:url) (:titre) (:description)');
-        $stmt->bindValue(':format',$flux->getFormat());
+    public function insert(Flux $flux) {
+        $stmt = $this->con->prepare('INSERT INTO Flux(url,date) VALUES(:url,:date)');
+
         $stmt->bindValue(':url',$flux->getUrl());
-        $stmt->bindValue(':titre',$flux->getTitre());
-        $stmt->bindValue(':description',$flux->getDescription());
+        $stmt->bindValue(':date',$flux->getDate());
+
         $stmt->execute();
 
         return $this->con->lastInsertId();
