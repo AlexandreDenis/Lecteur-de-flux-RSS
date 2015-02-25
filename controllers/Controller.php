@@ -19,7 +19,7 @@ $app->post('/testPost', function (Request $request) use ($app) {
 
     $commandAction->addFlux($flux);
 
-    return $app->redirect('/PhpProject/views/index.php');
+    return $app->redirect('/PhpProject/views/flux.php');
 });
 
 $app->get('/testGet', function () {

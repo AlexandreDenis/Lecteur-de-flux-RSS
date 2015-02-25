@@ -12,19 +12,20 @@ class Flux
     private $url;
     private $date;
 
-    private $titre;
-    private $description;
-
-    private $listArticle;
-
-    public function __construct($url,$date) {
+    public function __construct($url,$date,$id) {
         $this->url = $url;
         $this->date = $date;
+        $this->id = $id;
     }
 
     public function save($con) {
         $fluxGateway = new FluxGateway($con);
         $this->id =  $fluxGateway->insert($this);
+    }
+
+    public function getId()
+    {
+        return $this->id;
     }
 
     public function getUrl()
