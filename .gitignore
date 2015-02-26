@@ -1,5 +1,2 @@
-vendor/*
 .idea/*
-composer.lock
-composer.phar
 init_git.sh

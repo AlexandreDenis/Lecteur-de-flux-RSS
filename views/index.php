@@ -1,14 +1,14 @@
-<?php require_once __DIR__ . '/../controllers/ControllerOnLoadPageArticle.php'; ?>
+<?php require_once __DIR__.'/../controllers/ControllerOnLoadPageArticle.php'; ?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:f="http://java.sun.com/jsf/core"      
+      xmlns:f="http://java.sun.com/jsf/core"
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui" >
 <head>
 	<title>Feed Reader</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-	
+
 	<!-- Bootstrap -->
     <link href="../css/bootstrap.min.css" rel="stylesheet" media="screen" />
     <link href="../css/index.css" rel="stylesheet" media="screen" />
@@ -18,7 +18,7 @@
       }
     </style>
 </head>
-<body>  
+<body>
 	<div class="navbar navbar-inverse navbar-fixed-top">
       <div class="navbar-inner">
         <div class="container">
@@ -31,45 +31,43 @@
           <div class="nav-collapse collapse">
             <ul class="nav">
               <li class="active"><a href="index.php">Home</a></li>
-              <li><a href="flux.php">Gestion des flux</a></li>
+              <li><a href="feed.php">Feed management</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
       </div>
     </div>
-	
+
 	<div class="container">
 		<h3>Articles</h3>
-	
-		<!-- search bar -->
-		<form class="form-search">
-		  <div class="input-append">
-			<input type="text" class="span2 search-query" style="width:80%;" />
-			<button type="submit" class="btn">Search</button>
-		  </div>
-		</form>
-		
+
 		<!-- article data table -->
 		<table class="table table-hover">
 			<tbody>
 
-                <?php foreach($arrayArticle as &$value) { ?>
+                <?php foreach ($arrayArticle as &$value) {
+    ?>
 
                     <tr>
                         <td>
-                            <a target="_blank" href=<?php echo $value->getLien(); ?> ><h4><?php echo $value->getTitle(); ?></h4></a>
-                            <?php echo $value->getDate(); ?><br/><br/>
+                            <a target="_blank" href=<?php echo $value->getLink();
+    ?> ><h4><?php echo $value->getTitle();
+    ?></h4></a>
+                            <?php echo $value->getDate();
+    ?><br/><br/>
                             <div class="descr-article">
-                                <p><?php echo $value->getDescription(); ?></p>
+                                <p><?php echo $value->getDescription();
+    ?></p>
                             </div>
                         </td>
                     </tr>
 
-                <?php } ?>
+                <?php 
+} ?>
 
 			</tbody>
 		</table>
 	</div>
     <script src="js/bootstrap.min.js"></script>
-</body>  
+</body>
 </html>

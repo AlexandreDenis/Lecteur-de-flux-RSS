@@ -1,35 +1,69 @@
 <?php
 
-require_once __DIR__ . '/../pdo/Connection.php';
-require_once __DIR__ . '/../model/Flux.php';
-require_once __DIR__ . '/../dao/FluxGateway.php';
-require_once __DIR__ . '/../dao/ArticleGateway.php';
-use Symfony\Component\Console\Output\OutputInterface;
+require_once __DIR__.'/../pdo/Connection.php';
+require_once __DIR__ . '/../model/Feed.php';
+require_once __DIR__ . '/../dao/FeedGateway.php';
+require_once __DIR__.'/../dao/ArticleGateway.php';
 
+/**
+ * Class CommandAction
+ * class called by the controller
+ */
 class CommandAction
 {
-
     /**
-     * Add a new flux
+     * Add a new feed.
      */
-    public function addFlux($flux)
+    public function addFeed($feed)
     {
         $con = Connection::getConnection();
 
-        $fluxEntity = new Flux($flux,date("Y-m-d H:i"),0);
-        $fluxEntity->save($con);
+        $feedEntity = new Feed($feed, date("Y-m-d H:i"), 0);
+        $feedEntity->save($con);
     }
 
-    public function findAllFlux() {
+    /**
+     * find all feeds
+     * @return array feeds
+     */
+    public function findAllFeed()
+    {
         $con = Connection::getConnection();
-        $flux = new FluxGateway($con);
-        return $flux->findAll();
+        $feed = new FeedGateway($con);
+
+        return $feed->findAll();
     }
 
-    public function findAllArticle() {
+    /**
+     * find all articles
+     * @return array articles
+     */
+    public function findAllArticle()
+    {
         $con = Connection::getConnection();
         $article = new ArticleGateway($con);
+
         return $article->findAll();
     }
 
+    /**
+     * delete a feed
+     * @param $idFeed the feed to delete
+     */
+    public function deleteFeed($idFeed)
+    {
+        $con = Connection::getConnection();
+        $feed = new FeedGateway($con);
+        $feed->delete($idFeed);
+    }
+
+    /**
+     * delete all feeds
+     */
+    public function deleteAllFeed()
+    {
+        $con = Connection::getConnection();
+        $feed = new FeedGateway($con);
+        $feed->deleteAll();
+    }
 }
