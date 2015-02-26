@@ -1,7 +1,7 @@
 <?php
 
 require_once __DIR__.'/../pdo/Connection.php';
-require_once __DIR__ . '/../dao/FeedGateway.php';
+require_once __DIR__.'/../dao/FeedGateway.php';
 require_once __DIR__.'/../dao/ArticleGateway.php';
 require_once __DIR__.'/../model/Article.php';
 
@@ -10,12 +10,12 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 /**
- * Class WorkerCommand
+ * Class WorkerCommand.
  */
 class WorkerCommand extends Command
 {
     /**
-     * configure the worker
+     * configure the worker.
      */
     protected function configure()
     {
@@ -26,7 +26,7 @@ class WorkerCommand extends Command
     }
 
     /**
-     * execute the worker
+     * execute the worker.
      */
     protected function execute(InputInterface $input, OutputInterface $output)
     {

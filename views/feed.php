@@ -1,4 +1,4 @@
-<?php require_once __DIR__ . '/../controllers/ControllerOnLoadPageFeed.php'; ?>
+<?php require_once __DIR__.'/../controllers/ControllerOnLoadPageFeed.php'; ?>
 
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -6,7 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui" >
 <head>
-	<title>Feed Reader</title>
+	<title>Feeds</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<!-- Bootstrap -->
@@ -74,7 +74,8 @@
 							</td>
 						</tr>
 
-					<?php 
+					<?php
+
 } ?>
 
 				</tbody>

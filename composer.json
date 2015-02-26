@@ -1,7 +1,16 @@
 {
   "require": {
     "silex/silex": "~1.2",
-    "symfony/console": "3.0.*@dev",
-    "phpunit/phpunit": "4.5.*"
+    "symfony/console": "2.0.*@dev",
+    "phpunit/phpunit": "4.5.*",
+    "behat/behat": "2.4.*@stable",
+    "behat/mink": "1.4.*@stable",
+    "behat/mink-extension": "*",
+    "behat/mink-goutte-driver": "*",
+    "behat/mink-selenium2-driver": "*"
+  },
+  "minimum-stability": "dev",
+  "config": {
+    "bin-dir": "bin/"
   }
 }

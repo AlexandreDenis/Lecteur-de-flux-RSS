@@ -13,7 +13,8 @@ class ArticleGateway
     private $con;
 
     /**
-     * construct an articleGateway
+     * construct an articleGateway.
+     *
      * @param $con the connection to the database
      */
     public function __construct($con)
@@ -22,9 +23,11 @@ class ArticleGateway
     }
 
     /**
-     * insert a new article into the database
+     * insert a new article into the database.
+     *
      * @param Article $article the article to insert
      * @param $idFeed the feed associated to the article
+     *
      * @return id of the new article
      */
     public function insert(Article $article, $idFeed)
@@ -43,7 +46,8 @@ class ArticleGateway
     }
 
     /**
-     * get all articles from the database
+     * get all articles from the database.
+     *
      * @return array articles
      */
     public function findAll()

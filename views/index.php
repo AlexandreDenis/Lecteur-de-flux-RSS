@@ -6,7 +6,7 @@
       xmlns:h="http://java.sun.com/jsf/html"
       xmlns:p="http://primefaces.org/ui" >
 <head>
-	<title>Feed Reader</title>
+	<title>Articles</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
 	<!-- Bootstrap -->
@@ -62,7 +62,8 @@
                         </td>
                     </tr>
 
-                <?php 
+                <?php
+
 } ?>
 
 			</tbody>

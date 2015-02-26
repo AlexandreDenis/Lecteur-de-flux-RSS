@@ -1,13 +1,13 @@
 <?php
 
 require_once __DIR__.'/../pdo/Connection.php';
-require_once __DIR__ . '/../model/Feed.php';
-require_once __DIR__ . '/../dao/FeedGateway.php';
+require_once __DIR__.'/../model/Feed.php';
+require_once __DIR__.'/../dao/FeedGateway.php';
 require_once __DIR__.'/../dao/ArticleGateway.php';
 
 /**
  * Class CommandAction
- * class called by the controller
+ * class called by the controller.
  */
 class CommandAction
 {
@@ -23,7 +23,8 @@ class CommandAction
     }
 
     /**
-     * find all feeds
+     * find all feeds.
+     *
      * @return array feeds
      */
     public function findAllFeed()
@@ -35,7 +36,8 @@ class CommandAction
     }
 
     /**
-     * find all articles
+     * find all articles.
+     *
      * @return array articles
      */
     public function findAllArticle()
@@ -47,7 +49,8 @@ class CommandAction
     }
 
     /**
-     * delete a feed
+     * delete a feed.
+     *
      * @param $idFeed the feed to delete
      */
     public function deleteFeed($idFeed)
@@ -58,7 +61,7 @@ class CommandAction
     }
 
     /**
-     * delete all feeds
+     * delete all feeds.
      */
     public function deleteAllFeed()
     {

@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../dao/FeedGateway.php';
+require_once __DIR__.'/../dao/FeedGateway.php';
 
 /**
  * Class Feed
@@ -13,7 +13,8 @@ class Feed
     private $date;
 
     /**
-     * construct a new feed
+     * construct a new feed.
+     *
      * @param $url url of the feed
      * @param $date date of the feed
      * @param $id id of the feed
@@ -26,7 +27,8 @@ class Feed
     }
 
     /**
-     * save a feed
+     * save a feed.
+     *
      * @param $con connection to the database
      */
     public function save($con)
@@ -36,7 +38,8 @@ class Feed
     }
 
     /**
-     * get id
+     * get id.
+     *
      * @return id
      */
     public function getId()
@@ -45,7 +48,8 @@ class Feed
     }
 
     /**
-     * get url
+     * get url.
+     *
      * @return url
      */
     public function getUrl()
@@ -54,7 +58,8 @@ class Feed
     }
 
     /**
-     * get date
+     * get date.
+     *
      * @return date
      */
     public function getDate()

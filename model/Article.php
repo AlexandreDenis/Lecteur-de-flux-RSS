@@ -15,7 +15,8 @@ class Article
     private $date;
 
     /**
-     * create an article
+     * create an article.
+     *
      * @param $lien
      * @param $title
      * @param $description
@@ -30,7 +31,8 @@ class Article
     }
 
     /**
-     * get link
+     * get link.
+     *
      * @return link
      */
     public function getLink()
@@ -39,7 +41,8 @@ class Article
     }
 
     /**
-     * get title
+     * get title.
+     *
      * @return title
      */
     public function getTitle()
@@ -48,7 +51,8 @@ class Article
     }
 
     /**
-     * get description
+     * get description.
+     *
      * @return description
      */
     public function getDescription()
@@ -57,7 +61,8 @@ class Article
     }
 
     /**
-     * get date
+     * get date.
+     *
      * @return date
      */
     public function getDate()
@@ -66,7 +71,8 @@ class Article
     }
 
     /**
-     * save an article
+     * save an article.
+     *
      * @param $con connection to the database
      * @param $idFeed reference to the feed
      */

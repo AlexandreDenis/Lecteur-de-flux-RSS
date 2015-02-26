@@ -23,7 +23,7 @@ $app->post('/addFeed', function (Request $request) use ($app) {
     return $app->redirect('/PhpProject/views/feed.php');
 });
 
-/**
+/*
  * POST method to delete one feed
  */
 $app->post('/deleteFeed', function (Request $request) use ($app) {
@@ -36,7 +36,7 @@ $app->post('/deleteFeed', function (Request $request) use ($app) {
     return $app->redirect('/PhpProject/views/feed.php');
 });
 
-/**
+/*
  * POST method to delete all feeds
  */
 $app->post('/deleteAllFeed', function (Request $request) use ($app) {

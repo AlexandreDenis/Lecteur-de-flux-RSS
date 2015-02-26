@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . '/../model/Feed.php';
+require_once __DIR__.'/../model/Feed.php';
 
 /**
  * Class FeedGateway.
@@ -13,7 +13,8 @@ class FeedGateway
     private $con;
 
     /**
-     * construct a feedGateway
+     * construct a feedGateway.
+     *
      * @param $con the connection to the database
      */
     public function __construct($con)
@@ -22,8 +23,10 @@ class FeedGateway
     }
 
     /**
-     * insert a new feed into the database
+     * insert a new feed into the database.
+     *
      * @param Feed $feed the feed to insert
+     *
      * @return the id of the new feed
      */
     public function insert(Feed $feed)
@@ -39,7 +42,8 @@ class FeedGateway
     }
 
     /**
-     * get all feeds
+     * get all feeds.
+     *
      * @return array feeds
      */
     public function findAll()
@@ -57,7 +61,8 @@ class FeedGateway
     }
 
     /**
-     * update the date of a feed
+     * update the date of a feed.
+     *
      * @param $date the new date
      * @param $id the id of the feed to update
      */
@@ -72,7 +77,8 @@ class FeedGateway
     }
 
     /**
-     * delete a feed
+     * delete a feed.
+     *
      * @param $idFeed the feed to delete
      */
     public function delete($idFeed)
@@ -83,7 +89,7 @@ class FeedGateway
     }
 
     /**
-     * delete all feeds
+     * delete all feeds.
      */
     public function deleteAll()
     {
