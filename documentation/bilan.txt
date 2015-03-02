@@ -1,0 +1,16 @@
+Bilan
+
+Ce qui a été fait :
+    -> Interface graphique avec bootstrap
+    -> Ajout d'un flux par l'interface graphique
+    -> Test si le flux est bien une adresse url
+    -> Récupération de tous les flux à afficher sur l'interface graphique
+    -> Récupération de tous les articles à afficher sur l'interface graphique
+    -> Triage par date des articles à afficher
+    -> Le worker recherche tous les articles des flux ajoutés
+        -> Ajout par date des articles en fonction de la dernière utilisation du flux associé
+    -> Le worker test si le flux est un flux RSS ou Atom
+    -> Par cours des fichiers xml représentées par les flux
+    -> Tests unitaires
+    -> Tests fonctionnels
+    -> Prise en compte des standards de codage avec php-cs-fixer

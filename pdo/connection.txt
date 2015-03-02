@@ -1,0 +1,5 @@
+user="root"
+password=""
+dbname="adrien_calime_et_alexandre_denis_lecteur_rss"
+host="localhost"
+database="mysql"

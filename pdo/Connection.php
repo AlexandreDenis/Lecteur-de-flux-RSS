@@ -18,9 +18,10 @@ class Connection extends PDO
     public static function getConnection()
     {
         if (is_null(self::$con)) {
-            $dsn = 'mysql:host=localhost;dbname=adrien_calime_et_alexandre_denis_lecteur_rss';
+            $arrayConnection = parse_ini_file('connection.txt');
+            $dsn = $arrayConnection['database'].':host='.$arrayConnection['host'].';dbname='.$arrayConnection['dbname'];
             try {
-                self::$con = new PDO($dsn, 'root', '');
+                self::$con = new PDO($dsn, $arrayConnection['user'], $arrayConnection['password']);
             } catch (PDOException $e) {
                 $fp = fopen('connectionFailed.txt', 'w');
                 fprintf($fp, 'Connection failed : '.$e->getMessage());

@@ -1,0 +1,21 @@
+Installation du programme
+
+Mettre le projet dans le répertoire du serveur utilisé.
+Lancer le script sql pour mettre en place l'environnement de base de données.
+Lancer le serveur et la base de données associés.
+
+Pour utiliser sa propre base de données, il faut modifier le fichier :
+    pdo/connection.txt
+
+Accéder à la page principale de l'application avec le chemin : ip:port/repertoire_du_projet/views/index.php
+
+Pour lancer le worker, se déplacer dans le dossier du projet et lancer la commande
+    php worker/worker.php workerFeed
+
+Pour les tests unitaires, se déplacer dans le dossier du projet et lancer la commande suivante :
+    vendor/bin/phpunit tests/unit/LaClasseDeTests.php
+
+Pour les tests fonctionnels.
+
+Pour lancer la vérification des standards de codage, se déplacer dans le dossier du projet et lancer la commande :
+    php php-cs-fixer.phar fix .

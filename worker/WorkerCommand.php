@@ -45,6 +45,7 @@ class WorkerCommand extends Command
                 if (@file_get_contents($url, 0, null, 0, 1)) {
                     $xmlFile = simplexml_load_file($url);
 
+                    //atom file
                     if ($xmlFile->channel->item) {
                         $items = $xmlFile->channel->item;
                         foreach ($items as $item) {
@@ -54,7 +55,9 @@ class WorkerCommand extends Command
                                 $article->save($con, $id);
                             }
                         }
-                    } elseif ($xmlFile->entry) {
+                    }
+                    //rss file
+                    elseif ($xmlFile->entry) {
                         $items = $xmlFile->entry;
                         foreach ($items as $item) {
                             $pubDate = date("Y-m-d H:i", strtotime($item->updated));
