@@ -10,7 +10,11 @@ Ce qui a été fait :
     -> Le worker recherche tous les articles des flux ajoutés
         -> Ajout par date des articles en fonction de la dernière utilisation du flux associé
     -> Le worker test si le flux est un flux RSS ou Atom
-    -> Par cours des fichiers xml représentées par les flux
+    -> Parcours des fichiers xml représentées par les flux
     -> Tests unitaires
-    -> Tests fonctionnels
     -> Prise en compte des standards de codage avec php-cs-fixer
+
+Ce qui n'a pas été fait :
+    -> Tests fonctionnels avec Behat
+    -> Marquer un item comme lu
+    -> Organiser les flux par catégories

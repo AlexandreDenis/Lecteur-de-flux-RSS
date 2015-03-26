@@ -13,9 +13,7 @@ Pour lancer le worker, se déplacer dans le dossier du projet et lancer la comma
     php worker/worker.php workerFeed
 
 Pour les tests unitaires, se déplacer dans le dossier du projet et lancer la commande suivante :
-    vendor/bin/phpunit tests/unit/LaClasseDeTests.php
-
-Pour les tests fonctionnels.
-
-Pour lancer la vérification des standards de codage, se déplacer dans le dossier du projet et lancer la commande :
-    php php-cs-fixer.phar fix .
+    bin/phpunit tests/unit/LaClasseDeTests.php
+Dans le cas où l'on souhaite lancer les tests unitaires qui accèdent à la base de données de tests, il faut modifier
+le fichier suivant :
+    tests/unit/connectionTest.txt
